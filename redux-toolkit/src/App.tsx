@@ -26,7 +26,6 @@ function App() {
   let [renderedTemplate, setRenderedTemplate] = useState(<div></div>)
   let numDays = useSelector((state:any) => state.initialDetails.numberOfDays);
   let startDate = useSelector((state:any)=>state.initialDetails.startDate)
-  //let clusterName = "test. this wil be a useSelector of the state value";
   let clusterId = useSelector((state:any) => state.initialDetails.clusterId);
   let clusterTitle = useSelector((state:any) => state.initialDetails.clusterTitle);
   let clusterVerksamheter_och_omrade = useSelector((state:any) => state.initialDetails.clusterVerksamheter_och_omrade);
@@ -35,22 +34,12 @@ function App() {
   let id = useSelector((state:any)=>state.dataModel.id);
   let publishStatus = useSelector((state:any)=>state.dataModel.publishStatus);
   
-  
-  /*const options = () => [
-    {label:'item 1', value: 'item 1 value'},
-    {label:'item 2', value: 'item 2 value'},
-    {label:'item 3', value: 'item 3 value'}
-  ]*/
-  /*setMarkedDates([
-    '23-06-2023',
-    '24-06-2023',
-    '25-06-2023'
-  ])*/
-  let marked = ([
-    '23-06-2023',
-    '24-06-2023',
-    '25-06-2023'
-  ])
+  function handleClusterListChange(e:any) {
+    //set the cluster id for the entry
+    console.log("set cluster details according to: " + JSON.stringify(e))
+    dispatch(updateClusterVerksamheterOchOmrade("Verksamhet 2"))
+    dispatch(updateClusterId(2))
+  }
 
   const auth = async() => {
     console.log("- Authorize " + userEmail + "...")
@@ -90,7 +79,7 @@ function App() {
 
 return (
       <div className="App">
-        
+        { }
         {/*<button onClick={()=>alert(dataModel.dates)}>dataModel.dates</button>
         <button onClick={showDataModel}>Show dataModel</button>
         <button onClick={showSessionID}>showSessionID</button> 
@@ -122,8 +111,11 @@ return (
           </div>
           </div>
         }
-
- 
+        <button onClick={()=>(handleClusterListChange("verksamhet 2"))}>
+          React App 1 - Click button dispatch cluster list handleClusterListChange
+        </button>
+        <p>clusterVerksamheter_och_omrade value (state value in slice)= </p>
+        {clusterVerksamheter_och_omrade}
 
 
   </div>
