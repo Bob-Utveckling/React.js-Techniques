@@ -7,7 +7,6 @@ const initialState = {
     kommunName: "Kommun 1",
     clusterId: 0,
     clusterTitle: "",
-    //clusterVerksamheter_och_omrade: "Surte höjd, Björklövsv, Klöverstigen, Natt, Intro/Admin/Resurser",
     clusterVerksamheter_och_omrade: "Not entered yet",
 }
 
