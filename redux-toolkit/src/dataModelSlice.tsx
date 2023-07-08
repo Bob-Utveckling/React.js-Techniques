@@ -3,7 +3,7 @@ import axios from 'axios';
 import configData from "./config.json"
 
 axios.defaults.withCredentials = true;
-//export const saveDataModelAsDraft1 = createAsyncThunk ('content/fetchContent',
+
 export const saveDataModelAsDraftOrPublish = createAsyncThunk ('content/saveDataModelAsDraftOrPublish',
     async (sent:any) => {
     //async () => {
