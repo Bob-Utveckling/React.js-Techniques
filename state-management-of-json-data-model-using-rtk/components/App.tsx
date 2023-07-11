@@ -1,7 +1,6 @@
 import * as React from 'react';
 import {useState, useEffect} from 'react';
-import movingPersons from '../assets/movingPersons.png';
-import aleLogo from '../assets/AleLogo.png';
+
 
 import './App.css';
 import { Container, Row, Col } from 'react-grid-system';
