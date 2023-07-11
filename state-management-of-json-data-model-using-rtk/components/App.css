@@ -1,0 +1,476 @@
+
+.datePicker {
+  border: 1px solid orange;
+  font-size:20;
+}
+
+.plus_minus_signs {
+  width: 20px;
+  position: relative;
+  float: right;
+}
+
+.MainLogo {
+  width: 70px;
+}
+
+.saveButton {
+  position: relative;
+  float: right;
+}
+
+.friendlyDate {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: left;
+  /*margin-left: 40px;*/
+  margin: auto;
+  margin-bottom: 10px;
+
+  width: 50%;
+}
+
+.workAreaHolder {
+  margin: auto;
+  width: 80%;
+  /*border: 3px solid green;*/
+  padding: 10px;
+}
+
+.oneDaySchedule {
+  background-color: #b6aeae25;
+  margin: 10px;
+  padding: 10px;
+  border: 2px dashed brown;
+}
+
+.hr_1 {
+  border: 10px solid rgb(167, 175, 167);
+  border-radius: 5px;
+}
+
+
+.editableTableElement{
+  /*border: 1px dashed gray;*/
+  margin: auto;
+  width: 100%;
+  padding: 10px;
+}
+        /*these two styles accompany .tdForEditableAlignTextLeft and .tdForEditable in component for Intro/Admin/Resurser and they are "Statically used" in the editContents template to color a table with colSpan=2 etc */
+        .tdColorStyle2_blue {
+          background-color: #61bae4b6 ;
+        }
+
+        .tdColorStyle1_lightbrown_alignTextLeft {
+          background-color: #e4ba61b6 ;
+          text-align: left;
+        }
+
+.tdForEditableAlignTextLeft {
+  vertical-align: top;
+  text-align: left;
+  width: 100px;
+}
+
+.tdForEditable {
+  vertical-align: top;
+}
+
+.editableTextElement {
+  border: 1px dashed gray;
+  padding: 10px;
+  margin: 10px;
+  text-align: left;
+}
+
+.editableElement {
+  border: 1px dashed gray;
+}
+
+.intro_admin_resurser_table {
+  margin: auto;
+  margin-bottom: 10px;
+  background-color: #eed7a5b6;
+  border: 3px solid rgb(197, 157, 25);
+  padding: 10px;
+  font-size: 17px;
+  width: 80%; /*500px;*/
+}
+
+          /* remove */
+          .workarea5_intro_admin_resurser_table {
+            background-color: #eed7a5b6;
+            border: 3px solid rgb(197, 157, 25);
+            padding: 10px;
+            font-size: 17px;
+            width: 80%; /*500px;*/
+          }
+
+.natt_table {
+  margin: auto;
+  margin-bottom: 10px;
+  background-color: #e0d6d66b;
+  border: 3px solid rgb(192, 180, 190);
+  padding: 10px;
+  font-size: 17px;
+  width: 80%; /*500px;*/
+}
+
+            /* remove */
+            .workarea4_natt_table {
+              background-color: #e0d6d66b;
+              border: 3px solid rgb(192, 180, 190);
+              padding: 10px;
+              font-size: 17px;
+              width: 80%; /*500px;*/
+            }
+
+.kloverstigen_table {
+  margin: auto;
+  margin-bottom: 10px;
+  background-color: #f83bd96b;
+  border: 3px solid rgb(235, 46, 206);
+  padding: 10px;
+  font-size: 17px;
+  width: 80%; /*500px;*/
+}
+
+              /* remove */
+              .workarea3_kloverstigen_table {
+                background-color: #f83bd96b;
+                border: 3px solid rgb(235, 46, 206);
+                padding: 10px;
+                font-size: 17px;
+                width: 80%; /*500px;*/
+              }
+
+.bjorklovsv_table {
+  margin: auto;
+  margin-bottom: 10px;
+  background-color: #96f83bc7;
+  border: 3px solid green;
+  padding: 10px;
+  font-size: 17px;
+  width: 80%; /*500px;*/
+}
+
+
+            /* remove */
+            .workarea2_bjorklovsv_table {
+              background-color: #96f83bc7;
+              border: 3px solid green;
+              padding: 10px;
+              font-size: 17px;
+              width: 80%; /*500px;*/
+            }
+
+
+
+.surtehojd_table {
+  margin: auto;
+  margin-bottom: 10px;
+  background-color: #f8ec3b;
+  border: 3px solid orange;
+  padding: 10px;
+  font-size: 17px;
+  width: 80%; /*500px;*/
+
+}
+                /* remove */
+                .workarea1_surtehojd_table {
+                  background-color: #f8ec3b;
+                  border: 3px solid orange;
+                  padding: 10px;
+                  font-size: 17px;
+                  width: 80%; /*500px;*/
+
+                }
+
+
+.mall
+{
+    display: block;
+
+    -webkit-animation: fadeInFromNone 1s ease-out;
+    -moz-animation: fadeInFromNone 1s ease-out;
+    -o-animation: fadeInFromNone 1s ease-out;
+    animation: fadeInFromNone 1s ease-out;
+}
+
+@-webkit-keyframes fadeInFromNone {
+    0% {
+        display: none;
+        opacity: 0;
+    }
+
+    1% {
+        display: block;
+        opacity: 0;
+    }
+
+    100% {
+        display: block;
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fadeInFromNone {
+    0% {
+        display: none;
+        opacity: 0;
+    }
+
+    1% {
+        display: block;
+        opacity: 0;
+    }
+
+    100% {
+        display: block;
+        opacity: 1;
+    }
+}
+
+@-o-keyframes fadeInFromNone {
+    0% {
+        display: none;
+        opacity: 0;
+    }
+
+    1% {
+        display: block;
+        opacity: 0;
+    }
+
+    100% {
+        display: block;
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInFromNone {
+    0% {
+        display: none;
+        opacity: 0;
+    }
+
+    1% {
+        display: block;
+        opacity: 0;
+    }
+
+    100% {
+        display: block;
+        opacity: 1;
+    }
+}
+
+
+
+
+
+
+
+
+
+.custom-textarea {
+  display: block;
+  overflow: hidden;
+  resize: none;
+  line-height: 1.5;
+  font-size: 14;
+  font-weight: normal;
+  text-align: left;
+  hyphens: none;
+  border: 1px solid #3a3a3a;
+  margin: 10px;
+  padding: 6px;
+}
+
+
+/* section - show save as button for user */
+.button3 {
+  width: 130px;
+  height: 50px;
+  background-color: #127409;
+  color:white;
+  font-size: 16px;
+  width: 170px;
+}
+
+.showSaveButtonSectionForUser {
+  padding: 10px;
+  margin-top: 15px;
+  border-radius: 15px;
+  text-align: center;
+  background-color: #9afca2;
+  width: 100%;
+  display:inline-block;
+
+}
+/* section a - show save as draft, publish buttons */
+.button2 {
+  width: 130px;
+  height: 50px;
+  background-color: #0e7b99;
+  color:white;
+  font-size: 16px;
+  width: 170px;
+}
+
+.showDraftPublishButtonSection {
+  padding: 10px;
+  margin-top: 15px;
+  border-radius: 15px;
+  text-align: center;
+  background-color: #9be5fa;
+  width: 100%;
+  display:inline-block;
+}
+.hideDraftPublishButtonSection {
+  display: none;
+}
+
+/* end of section a    **************************** */
+
+.button4 {
+  width: 150px;
+  height:40px;
+  background-color: #99610e75;
+  color:white;
+}
+
+.button4:hover {
+  background-color: #754a0875;
+}
+
+
+.button1 {
+  width: 600px;
+  height:40px;
+}
+
+.alignLeft {
+  text-align: left;
+  float: left;
+  margin-left: 10px;
+}
+
+.alignRight {
+  text-align: right;
+  float: right;
+  background-color: gray;
+}
+
+
+.topRibbonUser {
+  background-color: rgb(0, 139, 12);
+  color: white;
+  border-color: orange;
+  display: inline-block;
+  overflow: auto;
+  width: 100%;
+}
+
+
+.topRibbonAdmin {
+  background-color: darkblue;
+  color: white;
+  border-color: orange;
+  display: inline-block;
+  overflow: auto;
+  width: 100%;
+}
+
+.App {
+  text-align: center;
+  background-color: #fcfcfc;
+  min-height: 90vh;
+}
+
+.App-logo {
+  width: 100px;
+  /*height: 40vmin;*/
+  pointer-events: none;
+}
+
+.AleLogo {
+  height: 100px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 40s linear;
+  }
+}
+
+.loginButton {
+  width: 120px;
+  height: 80px;
+  padding: 10px;
+  margin: 10px;
+  background-color: #a1dcf3;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.loginButton:hover {
+  background-color: #0e7b99;
+  color: white;
+}
+
+.LoginPanel {
+  background-color: #f0eaea;
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: rgb(0, 0, 0);
+  border: 10px solid rgb(57, 139, 9);
+  margin: 10px;
+  box-shadow: 10px 5px 5px rgb(218, 210, 210);
+  
+}
+
+.centerIt {
+  /*min-height: 50vh;*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+
+
+
+
