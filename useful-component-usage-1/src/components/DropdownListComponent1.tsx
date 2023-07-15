@@ -30,6 +30,7 @@ export default function Dropdown1(props:any) {
     listOfClusters.push({value:"3", label:"Date Picker", verksamheter_och_omrade:"specialized name 3"})
     listOfClusters.push({value:"4", label:"Custom Date Functions", verksamheter_och_omrade:"specialized name 4"})
     listOfClusters.push({value:"5", label:"Content Editables", verksamheter_och_omrade:"specialized name 5"})
+    listOfClusters.push({value:"6", label:"Container with Row & Col", verksamheter_och_omrade:"specialized name 6"})
 
 
     //}, [])
