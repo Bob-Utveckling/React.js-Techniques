@@ -16,7 +16,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { ThunkDispatch } from '@reduxjs/toolkit';
 
 import { Dropdown as DropdownDraftPublishList } from './DropdownDraftPublishList';
-import Dropdown1 from './DropdownClustersList';
+import Dropdown1 from './DropdownListComponent1';
 
 import { setNumberOfDays, setStartDate, updateClusterId,
           updateClusterTitle, updateClusterVerksamheterOchOmrade
@@ -413,148 +413,8 @@ function App() {
   return (
         <div className="App">
           
-          {/*<button onClick={()=>alert(dataModel.dates)}>dataModel.dates</button>
-          <button onClick={showDataModel}>Show dataModel</button>
-          <button onClick={showSessionID}>showSessionID</button> 
-          */}
-          { userIsLoggedIn &&
-          <div className={"topRibbon"+userRole}>
-            <div className="alignLeft">
-              Välkommen {userFirstName}! 
-            </div>
-            <div className="alignRight">
-              { userRole=="Admin" && <button className='button4' onClick={registerUser}>Registrera Personal</button> }
-              &nbsp;
-              { userRole=="Admin" && <button className='button4' onClick={showLog}>Aktivitetslogg</button> }
-              &nbsp;
-              <button className='button4' onClick={logOut}>Logga ut</button>
-            </div>
-          </div>
-          }
           <ToastContainer />
 
-          { userIsLoggedIn==true &&
-            userRole=="Admin" &&
-            <div id="AdminContent">
-              <p>Arbeta med schemat enligt följande detaljer:</p>
-              <Container style={{backgroundColor:'#e4dede'}}>
-                  <Row>
-    
-                  <Col sm={2}>
-                        <img src={movingPersons} className="App-logo" alt="logo" />
-                  </Col>
-    
-                  <Col sm={2}>                
-                      Antal dagar:<br/>
-                      <input style={{width:'50px',height:'50px', border:'1px solid orange', fontSize:20}}
-                      type="number" value={numDays}
-                      onChange={
-                          (e)=>
-                              {   console.log("numDays onChange gave: " + e.target.value);
-                                  dispatch(setNumberOfDays(e.target.value))
-                              }
-                      }
-                      />
-                  </Col>      
-    
-                  <Col sm={3}>
-                    Start datum:
-                    <DatePicker 
-                      wrapperClassName="datePicker"
-                      locale="sv" 
-                      selected={startDate} 
-                      onChange={date => { 
-                          console.log("do date change! => " + date);
-                          date && dispatch(setStartDate(date));
-                        }
-                      }
-                    />
-                  </Col>
-    
-                  <Col style={{margin:'5px'}}  lg={4}>    
-                    Vilka enheter/område:
-                    <ContentEditable
-                      /*innerRef={this.workAreaNamesContentEditable}*/
-                      style={{border: '1px solid orange', backgroundColor:'white', padding:'10px' }} 
-                      html={clusterVerksamheter_och_omrade}
-                      disabled={false}
-                      onChange={
-                        (e:any)=> {
-                          console.log("call handleClusterVerksamheter_och_omradeChange...");
-                          handleClusterVerksamheter_och_omradeChange(e);
-                        }
-                      }
-                    />
-                  </Col>
-                </Row>
-                <Row>
-                  <Col>
-                    <button className="button1" 
-                      onClick={
-                        ()=> {
-                          generateMallButtonClicked()
-                            .catch(err=>(console.log("BL err in calling generateMallButtonClicked in App.tsx file")))
-                        }
-                      }>Skapa</button>
-                  </Col>
-                </Row>
-                </Container>
-                <Container style={{backgroundColor:'#fff8c5 '}}>
-                <Row>
-                  <Col>
-                  Du kan även välja och redigera en utkast eller publicering som du tidigare sparat:
-                  </Col>
-                </Row>
-                <Row>
-                  <Col>
-                    <br/>
-                    <DropdownDraftPublishList publishStatus="draft" listOfDraftRecords={listOfDraftRecords} onChange={handleDraftOrPublishListChange}/>
-                    <br/>eller
-                    <br/>
-                    <DropdownDraftPublishList publishStatus="publish" listOfPublishRecords={listOfPublishRecords} onChange={handleDraftOrPublishListChange}/>
-                  </Col>
-                </Row>
-              </Container>  
-    
-            <div data-id="allEditables">  
-                {showSaveDraftPublishButtons ?
-                  <div className="showDraftPublishButtonSection">
-                    <button className="button2" onClick={()=>saveAsButtonClicked('draft')}>Spara som utkast</button>
-                    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    <button className="button2" onClick={()=>saveAsButtonClicked('publish')}>Publicera</button>
-                    <br></br>Schemat nedan har id: {id}
-                  </div>
-                : <div></div> }
-
-              {renderedTemplate}
-            </div>    
-          </div>
-          }
-
-
-
-          { userIsLoggedIn==true &&
-            userRole=="User" &&
-            <div id="UserContent">
-              <p></p>
-              <DropdownDraftPublishList publishStatus="publish" listOfPublishRecords={listOfPublishRecords} onChange={handleDraftOrPublishListChange}/>
-              {calendarRender}
-
-              {showSaveButtonForUser ?
-                  <div className="showSaveButtonSectionForUser">
-                    <button className="button3" onClick={()=>saveAsButtonClicked('publish')}>Spara dina ändringar</button>
-                    <br></br>Schemat nedan har id: {id}
-                  </div>
-                : <div></div> }
-
-
-              <div data-id="allEditables">  
-              {renderedTemplate}
-            </div>
-            </div>
-          }
-
-          { userIsLoggedIn==false &&
           <div id="YouMustLoginContent" className="centerIt">
             <div  className="LoginPanel">
               <label>Select from the dropdown menu:</label>
@@ -563,7 +423,6 @@ function App() {
 
             </div>
             </div>
-          }
 
 
     </div>
