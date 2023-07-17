@@ -58,6 +58,8 @@ function App() {
     const [showSaveButtonForUser, setShowSaveButtonForUser] = useState(false);
 
     let [renderedTemplate, setRenderedTemplate] = useState(<div></div>)
+    let [theComponent, setTheComponent] = useState(<div></div>)
+
     let numDays = useSelector((state:any) => state.initialDetails.numberOfDays);
     let startDate = useSelector((state:any)=>state.initialDetails.startDate)
     //let clusterName = "test. this wil be a useSelector of the state value";
@@ -114,29 +116,6 @@ function App() {
     }
 
 
-
-/*    useEffect(()=> {
-      work 1
-      //errorprone appraoch: userRole=="User" && setCalendarRender(<RenderCalendar markedDates={dataModel.dates} />)
-      alert("hello")
-      work 2
-      axios
-        .get(configData.API_URL+"listAllDraftsOrPublishes/publish",
-          { withCredentials: true })
-        .then((response) => {
-          console.log("- how many for list of all 'publish':"+ response.data.length)
-          setListOfPublishRecords(response.data)
-      }).catch(err=> console.log("- axios get listOfAllRecords error: " + err))
-
-      axios
-      .get(configData.API_URL+"listAllDraftsOrPublishes/draft",
-        { withCredentials: true })
-      .then((response) => {
-        console.log("- how many for list of all 'draft':"+ response.data.length)
-        setListOfDraftRecords(response.data)
-    }).catch(err=> console.log("- axios get listOfAllRecords error: " + err))
-  },[dataModel.dates])
-*/
   const changeCalendarHighlightedDays = (theDates:any) => {
     let mark = [
       '27-06-2023',
@@ -163,7 +142,9 @@ function App() {
           position: toast.POSITION.TOP_RIGHT
         })
         break;
-  
+      case "calendar":
+        setTheComponent(<RenderCalendar markedDates={markedDates} />)
+        break;
     }
   }
 
@@ -177,8 +158,8 @@ function App() {
               <label>Select from the dropdown menu:</label>
               <br/>
               <Dropdown1 onChange={handleListChange} />
-
             </div>
+              {theComponent}
             </div>
 
 
