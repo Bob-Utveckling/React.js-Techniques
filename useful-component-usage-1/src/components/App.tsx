@@ -148,8 +148,23 @@ function App() {
   function handleListChange(e:any) {
     //set the cluster id for the entry
     console.log("set details according to: " + JSON.stringify(e))
-    dispatch(updateClusterVerksamheterOchOmrade(e.verksamheter_och_omrade))
-    dispatch(updateClusterId(e.value))
+    //dispatch(updateClusterVerksamheterOchOmrade(e.verksamheter_och_omrade))
+    //dispatch(updateClusterId(e.value))
+    let res = e;
+    console.log("value: " + e.value);
+    switch (e.value) {
+      case "toaster success":
+        toast.success("Welcome to useful component usage!", {
+          position: toast.POSITION.TOP_RIGHT
+        })
+        break;
+      case "toaster warn":
+        toast.warn("Warning message", {
+          position: toast.POSITION.TOP_RIGHT
+        })
+        break;
+  
+    }
   }
 
   return (
