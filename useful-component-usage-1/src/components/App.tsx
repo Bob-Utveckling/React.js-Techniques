@@ -40,12 +40,6 @@ function App() {
     //const dispatch = useDispatch<AppDispatch>();
     //const dispatch = useDispatch();
     const dispatch = useDispatch<ThunkDispatch<any,any,any>>();
-
-    const [userIsLoggedIn, setUserIsLoggedIn] = useState(false);
-    const [userRole, setUserRole] = useState("NA");
-    const [userEmail, setUserEmail] = useState("");
-    const [userPassword, setUserPassword] = useState("");
-    const [userFirstName, setUserFirstName] = useState("");
     const [markedDates, setMarkedDates] = useState(['','','']);
 
     let [listOfPublishRecords, setListOfPublishRecords] = useState([]);
@@ -82,11 +76,6 @@ function App() {
       '24-06-2023',
       '25-06-2023'
     ])*/
-    let marked = ([
-      '23-06-2023',
-      '24-06-2023',
-      '25-06-2023'
-    ])
 
 
     /*const sanitizeConf = {
@@ -143,8 +132,13 @@ function App() {
         })
         break;
       case "calendar":
+        setMarkedDates([])
         setTheComponent(<RenderCalendar markedDates={markedDates} />)
         break;
+      case "calendar-marked1":
+        setTheComponent(<RenderCalendar markedDates={['25-07-2023','26-07-2023','27-07-2023']} />)
+        break;
+  
     }
   }
 
