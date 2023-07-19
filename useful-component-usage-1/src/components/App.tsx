@@ -165,7 +165,25 @@ function App() {
           />
         )
         break;
-  
+        case "container":
+          setTheComponent(
+            <Container style={{backgroundColor:'#e4dede', width:'500px'}}>
+            <Row>
+              <Col sm={6}>
+                    <img src={movingPersons} className="App-logo" alt="logo" />
+              </Col>
+              <Col sm={2}>                
+                  Col 2<br/>
+                  <input style={{width:'50px',height:'50px', border:'1px solid orange', fontSize:20}}
+                  type="number" value={numDays}
+                  onChange={(e)=>{console.log("numDays onChange gave: " + e.target.value);}}
+                  />
+              </Col>      
+            </Row>
+            </Container>
+            )
+          break;
+    
     }
   }
 
