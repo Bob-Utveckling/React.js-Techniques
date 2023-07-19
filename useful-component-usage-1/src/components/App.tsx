@@ -41,17 +41,8 @@ function App() {
     //const dispatch = useDispatch();
     const dispatch = useDispatch<ThunkDispatch<any,any,any>>();
     const [markedDates, setMarkedDates] = useState(['','','']);
+    useState(<RenderCalendar markedDates={[]} />)
 
-    let [listOfPublishRecords, setListOfPublishRecords] = useState([]);
-    let [listOfDraftRecords, setListOfDraftRecords] = useState([]);
-    let [calendarRender, setCalendarRender] = 
-      useState(<RenderCalendar markedDates={[]}
-      />)
-
-    const [showSaveDraftPublishButtons, setShowSaveDraftPublishButtons] = useState(false);
-    const [showSaveButtonForUser, setShowSaveButtonForUser] = useState(false);
-
-    let [renderedTemplate, setRenderedTemplate] = useState(<div></div>)
     let [theComponent, setTheComponent] = useState(<div></div>)
 
     let numDays = useSelector((state:any) => state.initialDetails.numberOfDays);
@@ -138,7 +129,21 @@ function App() {
       case "calendar-marked1":
         setTheComponent(<RenderCalendar markedDates={['25-07-2023','26-07-2023','27-07-2023']} />)
         break;
-  
+        case "date picker":
+          setTheComponent(
+              <div style={{display:"flex", alignItems:"center"}}>
+                <DatePicker 
+                wrapperClassName="datePicker" locale="sv" selected={startDate} 
+                onChange={date => { 
+                    console.log("do date change! => " + date);
+                    date && console.log("dispatch");
+                  }
+                }
+                />
+              </div>
+            )
+          break;
+    
     }
   }
 
