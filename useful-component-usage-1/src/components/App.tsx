@@ -44,6 +44,7 @@ function App() {
     useState(<RenderCalendar markedDates={[]} />)
 
     let [theComponent, setTheComponent] = useState(<div></div>)
+    let [extraPiece, setExtraPiece] = useState(<div></div>)
 
     let numDays = useSelector((state:any) => state.initialDetails.numberOfDays);
     let startDate = useSelector((state:any)=>state.initialDetails.startDate)
@@ -129,7 +130,7 @@ function App() {
       case "calendar-marked1":
         setTheComponent(<RenderCalendar markedDates={['25-07-2023','26-07-2023','27-07-2023']} />)
         break;
-        case "date picker":
+      case "date picker":
           setTheComponent(
               <div style={{display:"flex", alignItems:"center"}}>
                 <DatePicker 
@@ -142,8 +143,29 @@ function App() {
                 />
               </div>
             )
-          break;
-    
+        break;
+      case "custom date functions":
+        setTheComponent(
+          <div>custom date functions</div>
+        )
+        break;
+      case "content editables":
+        setTheComponent(
+          <ContentEditable
+          /*innerRef={this.workAreaNamesContentEditable}*/
+          style={{border: '1px solid orange', backgroundColor:'white', padding:'10px', width: '300px' }} 
+          html={clusterVerksamheter_och_omrade}
+          disabled={false}
+          onChange={
+            (e:any)=> {
+              console.log("call function for Change...");
+              setExtraPiece(e.target.value);
+            }
+          }
+          />
+        )
+        break;
+  
     }
   }
 
@@ -159,6 +181,7 @@ function App() {
               <Dropdown1 onChange={handleListChange} />
             </div>
               {theComponent}
+              <b>{extraPiece}</b>
             </div>
 
 
